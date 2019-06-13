@@ -1,2 +1,2 @@
-#!/bin/user
+#!/bin/bash
 chmod a+x hello
