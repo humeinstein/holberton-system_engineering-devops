@@ -1,2 +1,2 @@
 #!/bin/bash
-mkdir dir_holberton -m --mode=751
+mkdir dir_holberton --mode=751
