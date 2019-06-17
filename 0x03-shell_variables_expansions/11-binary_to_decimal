@@ -1,2 +1,2 @@
 #!/bin/bash
-export $((2#BINARY))
+set $((2#BINARY))
