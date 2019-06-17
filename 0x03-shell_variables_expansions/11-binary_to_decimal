@@ -1,2 +1,2 @@
 #!/bin/bash
-export $((10#BINARY))
+export $((\#BINARY))
