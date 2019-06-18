@@ -1,0 +1,2 @@
+#!/bin/bash
+echo {a..z}{a..z} | xargs -s | grep -v oo
