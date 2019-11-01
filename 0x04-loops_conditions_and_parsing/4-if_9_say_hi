@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# print holberton and HI
+
+count=1
+while [ $count -le 10 ]
+do
+	echo "Holberton School"
+	if [ $count == 9 ]
+	   then
+	   echo "Hi"
+	fi
+	((count++))
+done 
