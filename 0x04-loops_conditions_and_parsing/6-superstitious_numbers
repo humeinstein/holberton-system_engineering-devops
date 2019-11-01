@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# print to 20 with luck countries
+
+count=1
+while [ $count -le 20 ]
+do
+	echo $count
+	case $count in
+	     4)
+		echo "bad luck from China"
+		;;
+	     9)
+		echo "bad luck from Japan"
+		;;
+	     17)
+		echo "badlucl from Italy"
+		;;
+	esac
+	((count++))
+done
