@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# use until print holberon 10 time
+
+c=1
+until [ $c -gt 10 ]
+do
+	echo "Holberton School"
+	((c++))
+done
