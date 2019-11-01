@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# make us a clock bro
+
+bighand=0
+littlehand=1
+while [ $bighand -le 12 ]
+do
+    littlehand=1
+    echo "Hour: $bighand"
+    while [ $littlehand -le 59 ]
+    do
+	echo "$littlehand"
+	((littlehand++))
+	done
+    ((bighand++))
+done
