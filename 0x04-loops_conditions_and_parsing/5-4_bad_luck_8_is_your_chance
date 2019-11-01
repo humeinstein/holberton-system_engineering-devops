@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#print holb 10 times with luck
+
+count=1
+while [ $count -le 10 ]
+do
+	if [ $count == 4 ]
+	   then
+	   echo "bad luck"
+	elif [ $count == 8 ]
+	     then
+	     echo "good luck"
+	else
+		echo "Holberton School"
+	fi
+	((count++))
+done 
