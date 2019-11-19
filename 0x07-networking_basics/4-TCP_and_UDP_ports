@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#script to show lidtening ports
+
+sudo netstat -lp
