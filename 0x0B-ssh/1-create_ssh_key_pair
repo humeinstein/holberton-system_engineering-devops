@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # create rsa keypair with 4096 bits
 
-ssh-keygen -b 4096 -f holberon -N betty
+ssh-keygen -b 4096 -f holberton -N betty
