@@ -1,0 +1,4 @@
+Host *
+    PasswordAuthentication no
+    IdentityFile ~/.ssh/holberton
+    SendEnv LANG LC_*
