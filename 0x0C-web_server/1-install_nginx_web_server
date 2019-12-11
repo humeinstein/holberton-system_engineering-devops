@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 # install nginx
-
-sudo apt-get update 
-sudo apt-get -y install nginx
+apt-get -y update 
+apt-get -y install nginx
 mkdir -p /var/www/html
 echo "Holberton School" > "/var/www/html/index.html"
 service nginx reload
