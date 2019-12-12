@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # install apache and start server
+systemctl reload apache2
 service apache2 restart
