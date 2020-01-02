@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# install nginx and change config file header "served by $hostname"
+sudo apt-get -y update 
+sudo apt-get -y install nginx
+mkdir -p /var/www/html
+echo "Holberton School" >> "/var/www/html/index.html"
+sudo sed -i "25i\ \tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
+sudo service nginx restart
