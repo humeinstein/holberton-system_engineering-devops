@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#install HAproxy and init server as loadbalancer
+sudo apt-get -y update
+sudo apt-get install -y haproxy
+sudo sed -i "9i ENABLED=1" /etc/default/haproxy
+cat >> /etc/haproxy/haproxy.cfg<<EOF
+
+frontend haproxynode
+ bind *:80
+ mode http
+ default_backend backendnodes
+
+backend backendnodes
+ balance roundrobin
+ server 824-web-01 34.74.144.148:80 check
+ server 824-web-02 34.74.163.244:80 check
+
+EOF
+
+sudo service haproxy restart
