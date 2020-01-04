@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #authorize site on nginx
-ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enables/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx restart

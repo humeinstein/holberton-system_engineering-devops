@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 #nginx authorize file and make appear dead!
-ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enables/default
-sudo service nginx restart
-sudo pkill -o nginx
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx res
