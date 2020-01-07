@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#config domanin zone www points to load balance IP and add subdomains
+getallrecord()
+{
+    for sub in "www" "web-01" "web-02" "lb-01"; do
+	answer=( $(dig "$sub.$1" | awk '/ANSWER SECTION:/ {getline;print}') )
+	echo The subdomain "$sub" is a "${answer[3]}" record and points to "${answer[4]}"
+    done
+}
+
+if [ "$#" -gt 1 ]; then
+    answer=( $(dig "$2.$1" | awk '/ANSWER SECTION:/ {getline;print}') )
+    echo The subdomain "$2" is a "${answer[3]}" record and points to "${answer[4]}"
+else
+    getallrecord "$1"
+fi
