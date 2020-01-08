@@ -1,3 +1,3 @@
 #!/bin/bash
 #script whoami as user
-sudo -u $1 whoami
+sudo -u "$1" whoami
