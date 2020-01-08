@@ -33,14 +33,23 @@ defaults
 	errorfile 502 /etc/haproxy/errors/502.http
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
+	option forwardfor
 
 frontend haproxynode
- bind *:80
-  mode http
-   default_backend backendnodes
+ 	  bind *:80
+  	   mode http
+   	    default_backend backendnodes
 
+frontend www-https
+	  bind [PUBLIC_IP]:443 ssl crt /etc/haproxy/ssl/www.figments.tech.pem
+	   reqadd X-Forwarded-Proto:\ https
+	    default_backend web-backend
 backend backendnodes
- balance roundrobin
-  server 824-web-01 34.74.144.148:80 check
-   server 824-web-02 34.74.163.244:80 check
+ 	balance roundrobin
+  	server 824-web-01 34.74.144.148:80 check
+   	server 824-web-02 34.74.163.244:80 check
 
+backend web-backend
+	redirect scheme https if !{ ssl_fc }
+	server web-01 [PRIVATE_IP]:80 check
+	server web-02 [PRIVATE_IP]:80 chec
