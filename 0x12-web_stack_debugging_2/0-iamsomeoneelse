@@ -1,3 +1,0 @@
-#!/bin/bash
-#script whoami as user
-sudo -u $1 whoami
