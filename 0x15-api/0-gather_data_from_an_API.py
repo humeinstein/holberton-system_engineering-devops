@@ -15,10 +15,11 @@ if __name__ == "__main__":
     totaltasks = 0
     tasklist = []
     for taskcheck in tasks:
-        if taskcheck.get("completed"):
-            tasklist.append(taskcheck)
-            taskcompleted += 1
-        totaltasks += 1
+        if taskcheck['userId'] == int(sys.argv[1]):
+            if taskcheck.get("completed"):
+                tasklist.append(taskcheck)
+                taskcompleted += 1
+            totaltasks += 1
     print("Employee {} is done with tasks({}/{}):".format
           (name, taskcompleted, totaltasks))
     for completedtasks in tasklist:
