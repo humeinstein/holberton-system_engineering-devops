@@ -7,7 +7,7 @@ if __name__ == "__main__":
 
     erequest = requests.get('https://jsonplaceholder.typicode.com/users/{}'
                             .format(sys.argv[1]))
-   
+
     name = erequest.json().get('name')
     trequests = requests.get('https://jsonplaceholder.typicode.com/todos')
     tasks = trequests.json()
@@ -24,7 +24,3 @@ if __name__ == "__main__":
           (name, taskcompleted, totaltasks))
     for completedtasks in tasklist:
         print("\t {}".format(completedtasks.get("title")))
-    
-
-
-
