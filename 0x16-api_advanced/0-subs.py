@@ -2,7 +2,7 @@
 """ script returns amount of subscribers of given subreddit """
 
 import requests as req
-from sys import argv
+
 
 
 def number_of_subscribers(subreddit):
