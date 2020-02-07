@@ -12,6 +12,8 @@ def recurse(subreddit):
     }
     get_posts = req.get(url, headers=headers).json()
 
-    for iter in range(10):
+    for iter in range(0, 1500):
         hot_post = get_posts['data']['children'][iter]
+        if hot_post is None:
+            return (0)
         print(hot_post['data']['title'])
