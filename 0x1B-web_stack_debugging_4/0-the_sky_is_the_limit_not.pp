@@ -1,8 +1,8 @@
-exec { 'fix-limit-in-bin':
+exec { 'fix-limit':
   path    => ['/usr/bin', '/sbin', '/bin', '/usr/sbin'],
-  command => "sed -i 's/15/4096/g' /etc/default/nginx",
+  command => "sed -i 's/15/5000/g' /etc/default/nginx",
 }
-exec { 'nginx-refresh':         
+exec { 'nginx-refresh':
   path    => ['/usr/bin', '/sbin', '/bin', '/usr/sbin'],
   command => 'sudo service nginx restart',
 }
